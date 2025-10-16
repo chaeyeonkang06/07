@@ -7,15 +7,20 @@
 
 #include <stdio.h>
 
+int inc(int counter);
+
 int main(void)
 {
-    int i;
+    int i=10;
+    printf("함수 호출 전 i = %d\n", i);
     
-    for(i=0;i<5;i++)
-    {
-        static int temp = 1;
-        printf("temp = %d\n", temp);
-        temp++;
-    }
+    i=inc(i);
+    printf("함수 호출 후 i = %d\n", i);
+    
     return 0;
+}
+int inc(int counter)
+{
+    counter++;
+    return counter;
 }
