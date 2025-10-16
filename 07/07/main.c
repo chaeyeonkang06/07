@@ -7,18 +7,22 @@
 
 #include <stdio.h>
 
-int counter;
+void f(void);
 
-void set_counter()
-{
-    counter=20;
-}
 
 int main(void)
 {
-    printf("counter=%d\n", counter);
-    set_counter();
-    printf("counter=%d\n", counter);
-    
+    int i;
+    for(i=0;i<5;i++) //이미 i가 10이라 조건에 안 맞아서 사라졍
+    {
+        f();
+    }
     return 0;
+}
+
+void f(void)
+{
+    int i;
+    for(i=0;i<10;i++)
+        printf("#");
 }
