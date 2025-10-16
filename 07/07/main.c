@@ -7,22 +7,23 @@
 
 #include <stdio.h>
 
-void f(void);
-
+void sub(void);
 
 int main(void)
 {
     int i;
-    for(i=0;i<5;i++) //이미 i가 10이라 조건에 안 맞아서 사라졍
-    {
-        f();
-    }
-    return 0;
+    for(i=0;i<3;i++)
+        sub();
+        
+        return 0;
 }
 
-void f(void)
+void sub(void)
 {
-    int i;
-    for(i=0;i<10;i++)
-        printf("#");
+    int auto_count=0;
+    static int static_count=0;
+    auto_count++;
+    static_count++;
+    printf("auto_count = %d\n", auto_count);
+    printf("static_count = %d\n", static_count);
 }
